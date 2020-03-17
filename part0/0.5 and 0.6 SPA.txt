@@ -1,0 +1,40 @@
+https://fullstack-exampleapp.herokuapp.com/SPA
+
+https://www.websequencediagrams.com/
+actual diagram code:
+
+browser->server: HTTP GET https://fullstack-exampleapp.herokuapp.com/spa
+server--> browser: returns HTML code as text/html
+browser-> server: HTTP GET https://fullstack-exampleapp.herokuapp.com/main.css
+server--> browser: returns css code as text/css
+browser-> server: HTTP GET https://fullstack-exampleapp.herokuapp.com/spa.js
+server--> browser: returns js code as application/javascript
+note over browser:
+browser starts executing js-code that
+requests JSON data from server 
+end note
+
+browser->server: HTTP GET https://fullstack-exampleapp.herokuapp.com/data.json
+server-->browser: returns requested JSON data
+
+note over browser:
+browser executes the event handler
+that renders notes to display
+end note
+
+note over browser:
+Text is typed in the form field 
+and "save" button is clicked
+end note
+note over browser:
+Event handler is executed that updates the value in the browsers JSON, renders the updated list
+and then sends a POST request with 201 code to update JSON on the server
+Page is not reloaded because of the 201 code.
+end note
+
+browser --> server: HTTP POST code 201 https://fullstack-exampleapp.herokuapp.com/new_note_spa as application/JSON
+note over server:
+Server's JSON data is updated
+end note
+
+
