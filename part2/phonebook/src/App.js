@@ -92,7 +92,7 @@ const handleUpdate = (id, newPerson) => {
 const handleDelete = (p) => {
   if (window.confirm(`do you really want to delete ${p.name}?`)){
     phonebook.remove(p.id).then(r => {
-      if (r.status === 200) {
+      if (r.status === 204) {
         console.log(r)
         setPersons(persons.filter(person=>person.id !== p.id))
         setNotification({type: 'positive', message: 'Person has been deleted.'})
@@ -163,8 +163,7 @@ useEffect(() => {
     .then(data => setPersons(data))
   },[])
 
-
-
+filterPersons(persons)
   return (
     <div>
       <h2>Phonebook</h2>
