@@ -1,7 +1,7 @@
 
 import axios from 'axios'
 
-const url = '/api/persons/'
+const url = '/api/persons'
 const getAll = () => {
     return axios
             .get(`${url}`)
