@@ -48,7 +48,7 @@ blogsRouter.delete(`/:id`, async (request, response) => {
   
   if (blog.user.toString() === decodedToken.id) {
     await Blog.findByIdAndRemove(id)
-    return response.status(204).json('person  has been removed')
+    return response.status(204).end()
   }
   else response.status(401).json({ error: "no permission"})
 
@@ -56,8 +56,10 @@ blogsRouter.delete(`/:id`, async (request, response) => {
 
 blogsRouter.put('/:id', async (request, response) => {
   const id = request.params.id
+  
   const newObject = request.body
-  Blog.findByIdAndUpdate(id, newObject)
-  response.status(200).end()
+  console.log(newObject)
+  const responseMONGO = await Blog.findByIdAndUpdate(id, newObject).populate('user', {name : 1})
+  response.status(200).send(responseMONGO).end()
 })
   module.exports = blogsRouter
