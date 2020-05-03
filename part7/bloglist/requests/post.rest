@@ -1,0 +1,43 @@
+POST http://localhost:3001/api/users
+Content-Type: application/json
+
+{
+    "username": "Piotr",
+    "password": "buzzword",
+    "name": "Peter Peterobich"
+}
+
+###
+POST http://localhost:3001/api/blogs
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Ikthcm9saXMiLCJpZCI6IjVlODhiMzdlNzI4OTQ4NTUzY2VmMjljOCIsImlhdCI6MTU4NjEwMDMzMH0.a2VYC1adL85SltBv6440hIZQAlo0lB2EhTN8BiftCh8
+
+{
+    "likes": 5,
+    "title": "React Patterns",
+    "author": "Michael Chan",
+    "url": "http://www.u.arizona.edu/~rubinson/copyright_violations/Go_To_Considered_Harmful.html",
+    "user": "5e88b37e728948553cef29c7"
+}
+###
+POST http://localhost:3001/api/login
+Content-Type: application/json
+
+{
+    "username": "Karolis",
+    "password": "puzzleword"
+}
+
+###
+DELETE http://localhost:3001/api/blogs/5e8a034051991245be46758a
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Ikthcm9saXMiLCJpZCI6IjVlODhiMzdlNzI4OTQ4NTUzY2VmMjljOCIsImlhdCI6MTU4NjEwMDMzMH0.a2VYC1adL85SltBv6440hIZQAlo0lB2EhTN8BiftCh8
+
+### Add comment
+
+POST http://localhost:3001/api/blogs/5ea9456dce466e601d7c1a57/comments
+Content-Type: application/json
+
+{
+    "comments": "asfasdfa123asd"
+}
