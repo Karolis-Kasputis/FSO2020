@@ -1,0 +1,13 @@
+name: Deployment pipeline
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  lepipe:
+    runs-on: ubuntu-18.04
+    steps:
+      - name: piepline
+      - run: echo "hellp world"
