@@ -9,6 +9,5 @@ jobs:
   lepipe:
     runs-on: ubuntu-18.04
     steps:
-      - uses: actions/checkout@master
       - name: piepline
         run: echo "hellp world"
