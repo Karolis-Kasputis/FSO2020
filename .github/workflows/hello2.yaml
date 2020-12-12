@@ -8,6 +8,6 @@ jobs:
     runs-on: ubuntu-18.04
 
     steps:
-      - uses: []
+      - uses: actions/checkout@v2
       - name: Say hello
       - run: echo "Hello World!"
