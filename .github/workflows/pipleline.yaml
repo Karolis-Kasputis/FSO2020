@@ -13,9 +13,9 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: '12.x'
-      - name: install
-        run: run install
       - name: cd
         run: cd part11/full-stack-open-pokedex
+      - name: install
+        run: npm install
       - name: lint
         run: npm run eslint
