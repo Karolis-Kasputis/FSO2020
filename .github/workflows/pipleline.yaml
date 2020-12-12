@@ -9,5 +9,13 @@ jobs:
   lepipe:
     runs-on: ubuntu-18.04
     steps:
-      - name: piepline
-        run: echo "hellp world"
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '12.x'
+      - name: install
+        run: run install
+      - name: cd
+        run: cd part11/full-stack-open-pokedex
+      - name: lint
+        run: npm run eslint
